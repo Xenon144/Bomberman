@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://dmey8igcvyxw6"]
+
+[ext_resource type="Script" path="res://B/b.gd" id="1_cciv6"]
+[ext_resource type="Texture2D" uid="uid://dcmk74nbw2l44" path="res://B/B.png" id="2_k2b4n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1h1uu"]
+atlas = ExtResource("2_k2b4n")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6hxx"]
+atlas = ExtResource("2_k2b4n")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y78e"]
+atlas = ExtResource("2_k2b4n")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfj13"]
+atlas = ExtResource("2_k2b4n")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e6bat"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1h1uu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6hxx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0y78e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfj13")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3a7xh"]
+size = Vector2(48, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ucjv8"]
+size = Vector2(48, 48)
+
+[node name="B" type="StaticBody2D"]
+top_level = true
+script = ExtResource("1_cciv6")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3.57628e-07, 3.57628e-07)
+sprite_frames = SubResource("SpriteFrames_e6bat")
+autoplay = "default"
+frame_progress = 0.279431
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3a7xh")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ucjv8")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dskfrocvgso1b"]
+
+[ext_resource type="Script" path="res://Timer_label/timer_label.gd" id="1_jghvw"]
+
+[node name="timer_label" type="Label"]
+z_index = 3
+offset_left = 44.0
+offset_top = 25.0
+offset_right = 84.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 32
+script = ExtResource("1_jghvw")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

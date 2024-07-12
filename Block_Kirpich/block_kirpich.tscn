@@ -1,0 +1,106 @@
+[gd_scene load_steps=15 format=3 uid="uid://em7lhue46ev8"]
+
+[ext_resource type="Texture2D" uid="uid://bl74miyxyxuhi" path="res://Block_Kirpich/tile_kirpich.png" id="1_bedr2"]
+[ext_resource type="Script" path="res://Block_Kirpich/block_kirpich.gd" id="1_lqnen"]
+[ext_resource type="Texture2D" uid="uid://fjnlt6desxb7" path="res://Block_Kirpich/kirpich_destroy.png" id="3_l0rae"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ooqia"]
+size = Vector2(48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eg61b"]
+atlas = ExtResource("1_bedr2")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyn2n"]
+atlas = ExtResource("3_l0rae")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xncqg"]
+atlas = ExtResource("3_l0rae")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36v0j"]
+atlas = ExtResource("3_l0rae")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmmi1"]
+atlas = ExtResource("3_l0rae")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xre0r"]
+atlas = ExtResource("3_l0rae")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkdb1"]
+atlas = ExtResource("3_l0rae")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nu313"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eg61b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uyn2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xncqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36v0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmmi1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xre0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkdb1")
+}],
+"loop": false,
+"name": &"default",
+"speed": 14.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0u2d8"]
+size = Vector2(48, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_25ak5"]
+size = Vector2(48, 48)
+
+[node name="Block_Kirpich" type="StaticBody2D"]
+z_index = 2
+collision_layer = 4
+collision_mask = 144
+script = ExtResource("1_lqnen")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ooqia")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nu313")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_0u2d8")
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("RectangleShape2D_0u2d8")
+
+[node name="Area2D3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+shape = SubResource("RectangleShape2D_25ak5")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_2_body_exited"]
+[connection signal="body_entered" from="Area2D3" to="." method="_on_area_2d_3_body_entered"]
+[connection signal="body_exited" from="Area2D3" to="." method="_on_area_2d_3_body_exited"]

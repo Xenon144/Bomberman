@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6oybwvf71cms"]
+
+[ext_resource type="Script" path="res://Lazer_MOB/MOB_Lazer_left/mob_lazer_left.gd" id="1_g5kbe"]
+[ext_resource type="Texture2D" uid="uid://b74g2rogb55mw" path="res://Lazer/lazer_yellow_square.png" id="2_iqv1w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtv8n"]
+size = Vector2(43, 43)
+
+[node name="mob_lazer_left" type="StaticBody2D"]
+top_level = true
+collision_layer = 128
+collision_mask = 324
+script = ExtResource("1_g5kbe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_iqv1w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.002, 0.002)
+shape = SubResource("RectangleShape2D_dtv8n")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

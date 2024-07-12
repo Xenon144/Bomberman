@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4c8yk0ge1f37"]
+
+[ext_resource type="Script" path="res://Pulka/pulka.gd" id="1_utl7f"]
+[ext_resource type="Texture2D" uid="uid://dtu7rv08hmin6" path="res://Pulka/Pulka.png" id="2_mfy6u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmvfk"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6pmv"]
+size = Vector2(8, 8)
+
+[node name="pulka" type="StaticBody2D"]
+collision_mask = 24780
+script = ExtResource("1_utl7f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mfy6u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lmvfk")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_n6pmv")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

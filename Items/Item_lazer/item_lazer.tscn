@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdfh7863iooh"]
+
+[ext_resource type="Script" path="res://Items/Item_lazer/item_lazer.gd" id="1_h7lmb"]
+[ext_resource type="Texture2D" uid="uid://cw3mhl1kaes5o" path="res://Items/Item_lazer/item_lazer.png" id="1_uqa0w"]
+[ext_resource type="AudioStream" uid="uid://bimxaox07g0ai" path="res://Items/sfx-5.mp3" id="3_itl2e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1r2f"]
+size = Vector2(48, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqxdt"]
+size = Vector2(47, 47)
+
+[node name="item_lazer" type="StaticBody2D"]
+z_index = 1
+collision_layer = 256
+collision_mask = 128
+script = ExtResource("1_h7lmb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uqa0w")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_k1r2f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.002, 0.002)
+shape = SubResource("RectangleShape2D_vqxdt")
+
+[node name="Item_vzal" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_itl2e")
+volume_db = -5.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.9
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="finished" from="Item_vzal" to="." method="_on_item_vzal_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

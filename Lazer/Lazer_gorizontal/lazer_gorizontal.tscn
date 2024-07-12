@@ -1,0 +1,102 @@
+[gd_scene load_steps=14 format=3 uid="uid://bmbswpfiy5ojp"]
+
+[ext_resource type="Script" path="res://Lazer/Lazer_gorizontal/lazer_gorizontal.gd" id="1_tfa4w"]
+[ext_resource type="Texture2D" uid="uid://xfdjoea5c881" path="res://Lazer/Lazer_gorizontal/Lazer_gorizontal.png" id="2_3kpi5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dcih"]
+atlas = ExtResource("2_3kpi5")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36isd"]
+atlas = ExtResource("2_3kpi5")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1d5p"]
+atlas = ExtResource("2_3kpi5")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65x24"]
+atlas = ExtResource("2_3kpi5")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nf1sf"]
+atlas = ExtResource("2_3kpi5")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sojw4"]
+atlas = ExtResource("2_3kpi5")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jd4qq"]
+atlas = ExtResource("2_3kpi5")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wjct"]
+atlas = ExtResource("2_3kpi5")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cogy5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dcih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36isd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1d5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65x24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nf1sf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sojw4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jd4qq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wjct")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgqdn"]
+size = Vector2(42, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xx5jl"]
+size = Vector2(42, 42)
+
+[node name="lazer_gorizontal" type="StaticBody2D"]
+top_level = true
+collision_layer = 16384
+collision_mask = 324
+script = ExtResource("1_tfa4w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cogy5")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fgqdn")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_xx5jl")
+
+[node name="Area2D2" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("RectangleShape2D_xx5jl")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

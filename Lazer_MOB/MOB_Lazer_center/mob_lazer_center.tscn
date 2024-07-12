@@ -1,0 +1,90 @@
+[gd_scene load_steps=13 format=3 uid="uid://noyatabl8olv"]
+
+[ext_resource type="Script" path="res://Lazer_MOB/MOB_Lazer_center/mob_lazer_center.gd" id="1_vqrmw"]
+[ext_resource type="Texture2D" uid="uid://djk04ady4rsfk" path="res://Lazer_MOB/MOB_Lazer_center/MOB_Lazer_center.png" id="2_637vr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0vul"]
+atlas = ExtResource("2_637vr")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xciw7"]
+atlas = ExtResource("2_637vr")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8j70"]
+atlas = ExtResource("2_637vr")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvlm6"]
+atlas = ExtResource("2_637vr")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhfif"]
+atlas = ExtResource("2_637vr")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vb3md"]
+atlas = ExtResource("2_637vr")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xy7sm"]
+atlas = ExtResource("2_637vr")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5e2ng"]
+atlas = ExtResource("2_637vr")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_87k1g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0vul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xciw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8j70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvlm6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhfif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vb3md")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xy7sm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5e2ng")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6j72"]
+size = Vector2(44, 44)
+
+[node name="mob_lazer_center" type="StaticBody2D"]
+top_level = true
+collision_layer = 16384
+collision_mask = 324
+script = ExtResource("1_vqrmw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_87k1g")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_x6j72")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

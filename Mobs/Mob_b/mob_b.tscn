@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://8u0wa3vhugyy"]
+
+[ext_resource type="Script" path="res://Mobs/Mob_b/mob_b.gd" id="1_72fre"]
+[ext_resource type="Texture2D" uid="uid://cxtwirma7ngpi" path="res://Mobs/Mob_b/mob_b.png" id="2_73c5w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8aobr"]
+atlas = ExtResource("2_73c5w")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okye3"]
+atlas = ExtResource("2_73c5w")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40lkr"]
+atlas = ExtResource("2_73c5w")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76gca"]
+atlas = ExtResource("2_73c5w")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4oihp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8aobr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_okye3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40lkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76gca")
+}],
+"loop": true,
+"name": &"anim_default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31fbi"]
+size = Vector2(47, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i4pt0"]
+size = Vector2(24, 24)
+
+[node name="mob_b" type="CharacterBody2D"]
+z_index = 3
+collision_mask = 8268
+script = ExtResource("1_72fre")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4oihp")
+animation = &"anim_default"
+autoplay = "anim_default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.002, 0.002)
+shape = SubResource("RectangleShape2D_31fbi")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_i4pt0")
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

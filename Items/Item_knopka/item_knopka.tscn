@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://oius0v23rhgm"]
+
+[ext_resource type="Script" path="res://Items/Item_knopka/item_knopka.gd" id="1_ptvnk"]
+[ext_resource type="Texture2D" uid="uid://j4idmpou4n62" path="res://Items/Item_knopka/item_knopka.png" id="2_q5mkt"]
+[ext_resource type="AudioStream" uid="uid://bimxaox07g0ai" path="res://Items/sfx-5.mp3" id="3_mwk74"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pymn4"]
+size = Vector2(48, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26sst"]
+size = Vector2(47, 47)
+
+[node name="item_knopka" type="StaticBody2D"]
+z_index = 1
+collision_layer = 256
+collision_mask = 128
+script = ExtResource("1_ptvnk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_q5mkt")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_pymn4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.002, 0.002)
+shape = SubResource("RectangleShape2D_26sst")
+
+[node name="Item_vzal" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_mwk74")
+volume_db = -5.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.9
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="finished" from="Item_vzal" to="." method="_on_item_vzal_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

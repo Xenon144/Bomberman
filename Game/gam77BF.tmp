@@ -1,0 +1,243 @@
+[gd_scene load_steps=9 format=3 uid="uid://c74bgk5t3i073"]
+
+[ext_resource type="Script" path="res://Game/game.gd" id="1_c1frk"]
+[ext_resource type="Texture2D" uid="uid://c0d7s1jcu5mjn" path="res://Field.png" id="1_chvx8"]
+[ext_resource type="PackedScene" uid="uid://bbhb2txaqtdhs" path="res://Player/player.tscn" id="2_hrwcn"]
+[ext_resource type="PackedScene" uid="uid://cqh7xgk4ol5l3" path="res://Block/block_Up_and_Down.tscn" id="3_3cm2p"]
+[ext_resource type="PackedScene" uid="uid://7oeixcgfyyub" path="res://Block/block_left_and_right.tscn" id="4_c3q3p"]
+[ext_resource type="PackedScene" uid="uid://fo570athw2uj" path="res://Block/block_cube.tscn" id="5_058ww"]
+[ext_resource type="AudioStream" uid="uid://xy7x2cr3t05f" path="res://3-track-3.mp3" id="6_nqngy"]
+[ext_resource type="PackedScene" uid="uid://em7lhue46ev8" path="res://Block_Kirpich/block_kirpich.tscn" id="8_ko5ji"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_c1frk")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(1.38, 1.38)
+texture = ExtResource("1_chvx8")
+centered = false
+
+[node name="Player" parent="." instance=ExtResource("2_hrwcn")]
+position = Vector2(65, 131)
+
+[node name="Block_Up_and_Down" parent="." instance=ExtResource("3_3cm2p")]
+position = Vector2(-196, 112)
+
+[node name="Block_Up_and_Down2" parent="." instance=ExtResource("3_3cm2p")]
+position = Vector2(-188, 611)
+
+[node name="block_left_and_right" parent="." instance=ExtResource("4_c3q3p")]
+position = Vector2(36, 89)
+
+[node name="block_left_and_right2" parent="." instance=ExtResource("4_c3q3p")]
+position = Vector2(1327, 89)
+
+[node name="block_cube" parent="." instance=ExtResource("5_058ww")]
+position = Vector2(111, 177)
+
+[node name="block_cube2" parent="." instance=ExtResource("5_058ww")]
+position = Vector2(199, 177)
+
+[node name="block_cube3" parent="." instance=ExtResource("5_058ww")]
+position = Vector2(111, 265)
+
+[node name="block_cube4" parent="." instance=ExtResource("5_058ww")]
+position = Vector2(199, 265)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_nqngy")
+autoplay = true
+
+[node name="bloki_kirpichi" type="Node2D" parent="."]
+
+[node name="Block_Kirpich" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(330, 133)
+
+[node name="Block_Kirpich2" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(154, 177)
+
+[node name="Block_Kirpich3" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(154, 221)
+
+[node name="Block_Kirpich4" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(154, 265)
+
+[node name="Block_Kirpich5" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(154, 309)
+
+[node name="Block_Kirpich6" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(154, 353)
+
+[node name="Block_Kirpich7" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(154, 397)
+
+[node name="Block_Kirpich8" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(154, 441)
+
+[node name="Block_Kirpich9" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(154, 485)
+
+[node name="Block_Kirpich10" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(154, 529)
+
+[node name="Block_Kirpich11" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(154, 573)
+
+[node name="Block_Kirpich12" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(198, 221)
+
+[node name="Block_Kirpich13" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(198, 309)
+
+[node name="Block_Kirpich14" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(198, 397)
+
+[node name="Block_Kirpich15" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(198, 485)
+
+[node name="Block_Kirpich16" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(198, 573)
+
+[node name="Block_Kirpich17" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(242, 177)
+
+[node name="Block_Kirpich18" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(242, 221)
+
+[node name="Block_Kirpich19" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(242, 265)
+
+[node name="Block_Kirpich20" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(242, 309)
+
+[node name="Block_Kirpich21" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(242, 353)
+
+[node name="Block_Kirpich22" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(242, 397)
+
+[node name="Block_Kirpich23" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(242, 441)
+
+[node name="Block_Kirpich24" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(242, 485)
+
+[node name="Block_Kirpich25" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(242, 529)
+
+[node name="Block_Kirpich26" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(242, 573)
+
+[node name="Block_Kirpich27" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(286, 221)
+
+[node name="Block_Kirpich28" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(286, 309)
+
+[node name="Block_Kirpich29" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(286, 397)
+
+[node name="Block_Kirpich30" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(286, 485)
+
+[node name="Block_Kirpich31" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(286, 573)
+
+[node name="Block_Kirpich32" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(330, 177)
+
+[node name="Block_Kirpich33" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(330, 221)
+
+[node name="Block_Kirpich34" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(330, 265)
+
+[node name="Block_Kirpich35" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(330, 309)
+
+[node name="Block_Kirpich36" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(330, 353)
+
+[node name="Block_Kirpich37" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(330, 397)
+
+[node name="Block_Kirpich38" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(330, 441)
+
+[node name="Block_Kirpich39" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(330, 485)
+
+[node name="Block_Kirpich40" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(330, 529)
+
+[node name="Block_Kirpich41" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(330, 573)
+
+[node name="Block_Kirpich42" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(374, 221)
+
+[node name="Block_Kirpich43" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(374, 309)
+
+[node name="Block_Kirpich44" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(374, 397)
+
+[node name="Block_Kirpich45" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(374, 485)
+
+[node name="Block_Kirpich46" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(374, 573)
+
+[node name="Block_Kirpich47" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(418, 177)
+
+[node name="Block_Kirpich48" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(418, 221)
+
+[node name="Block_Kirpich49" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(418, 265)
+
+[node name="Block_Kirpich50" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(418, 309)
+
+[node name="Block_Kirpich51" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(418, 353)
+
+[node name="Block_Kirpich52" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(418, 397)
+
+[node name="Block_Kirpich53" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(418, 441)
+
+[node name="Block_Kirpich54" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(418, 485)
+
+[node name="Block_Kirpich55" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(418, 529)
+
+[node name="Block_Kirpich56" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(418, 573)
+
+[node name="Block_Kirpich57" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(462, 221)
+
+[node name="Block_Kirpich58" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(462, 309)
+
+[node name="Block_Kirpich59" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(462, 397)
+
+[node name="Block_Kirpich60" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(462, 485)
+
+[node name="Block_Kirpich61" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(462, 573)
+
+[node name="Block_Kirpich62" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(506, 177)
+
+[node name="Block_Kirpich63" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(506, 221)
+
+[node name="Block_Kirpich64" parent="bloki_kirpichi" instance=ExtResource("8_ko5ji")]
+position = Vector2(506, 265)

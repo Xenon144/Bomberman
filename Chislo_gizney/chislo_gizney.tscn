@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsyrsfpln7x2a"]
+
+[ext_resource type="Script" path="res://Chislo_gizney/chislo_gizney.gd" id="1_8i53g"]
+
+[node name="chislo_gizney" type="Label"]
+z_index = 3
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 32
+script = ExtResource("1_8i53g")

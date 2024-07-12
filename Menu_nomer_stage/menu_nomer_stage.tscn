@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpeyvw7yd8rut"]
+
+[ext_resource type="Script" path="res://Menu_nomer_stage/menu_nomer_stage.gd" id="1_cnro2"]
+[ext_resource type="Texture2D" uid="uid://bsn8355xvst02" path="res://Menu_nomer_stage/menu_nomer_stage.png" id="2_iuk4c"]
+[ext_resource type="AudioStream" uid="uid://cwy5nks15vkqc" path="res://Menu_nomer_stage/2-track-2.mp3" id="3_u7fyv"]
+
+[node name="menu_nomer_stage" type="Node2D"]
+script = ExtResource("1_cnro2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(640.25, 360)
+scale = Vector2(1.55576, 0.983696)
+texture = ExtResource("2_iuk4c")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 571.0
+offset_top = 324.0
+offset_right = 711.0
+offset_bottom = 374.0
+theme_override_font_sizes/font_size = 36
+text = "STAGE 1"
+
+[node name="Menu_momer_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_u7fyv")
+volume_db = -10.0
+
+[connection signal="finished" from="Menu_momer_sound" to="." method="_on_menu_momer_sound_finished"]

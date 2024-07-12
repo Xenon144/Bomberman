@@ -1,0 +1,461 @@
+[gd_scene load_steps=12 format=3 uid="uid://svm3riuguqr3"]
+
+[ext_resource type="Script" path="res://Menu/menu.gd" id="1_fpbki"]
+[ext_resource type="Texture2D" uid="uid://kep81m00du6s" path="res://Menu/black_texture.png" id="2_0rqpj"]
+[ext_resource type="Texture2D" uid="uid://b5u1j7gjkjrt4" path="res://Menu/Заставка.png" id="2_kmt7u"]
+[ext_resource type="AudioStream" uid="uid://cdr8m7hgrwmgg" path="res://Menu/1-track-1.mp3" id="3_sfkdh"]
+[ext_resource type="Texture2D" uid="uid://cdci12xwyy0n0" path="res://Menu/Key_player_1.png" id="5_yocga"]
+[ext_resource type="Texture2D" uid="uid://ce4quqj3tmc7w" path="res://Menu/Key_player_2.png" id="6_1iide"]
+[ext_resource type="Texture2D" uid="uid://cw3mhl1kaes5o" path="res://Items/Item_lazer/item_lazer.png" id="7_n0cud"]
+[ext_resource type="Texture2D" uid="uid://b6hva6i7m2m2y" path="res://Items/Item_b/item_b.png" id="8_digp8"]
+[ext_resource type="Texture2D" uid="uid://b5v0n6rblxa6g" path="res://Items/Item_speed/item_speed.png" id="9_mgnlb"]
+[ext_resource type="Texture2D" uid="uid://ds0hytpk77xe" path="res://Items/Item_skvoz_steni/item_skvoz_steni.png" id="10_13tl5"]
+[ext_resource type="Texture2D" uid="uid://j4idmpou4n62" path="res://Items/Item_knopka/item_knopka.png" id="11_7smg5"]
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fpbki")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(29.0909, 16.3636)
+texture = ExtResource("2_0rqpj")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(643, 92)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_kmt7u")
+
+[node name="play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 364.0
+offset_top = 207.0
+offset_right = 561.0
+offset_bottom = 271.0
+theme_override_font_sizes/font_size = 36
+text = "New Game"
+
+[node name="quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 728.0
+offset_top = 207.0
+offset_right = 901.0
+offset_bottom = 272.0
+theme_override_font_sizes/font_size = 36
+text = "Quit"
+
+[node name="CheckBox" type="CheckBox" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 702.0
+offset_top = 295.0
+offset_right = 726.0
+offset_bottom = 319.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+focus_mode = 0
+theme_override_font_sizes/font_size = 36
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 304.0
+offset_right = 570.0
+offset_bottom = 354.0
+theme_override_font_sizes/font_size = 36
+text = "Bullets"
+
+[node name="Zastavka_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_sfkdh")
+volume_db = -10.0
+autoplay = true
+
+[node name="CheckBox2" type="CheckBox" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 702.0
+offset_top = 384.0
+offset_right = 726.0
+offset_bottom = 408.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+focus_mode = 0
+theme_override_font_sizes/font_size = 36
+
+[node name="CheckBox3" type="CheckBox" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1150.0
+offset_top = 248.0
+offset_right = 1174.0
+offset_bottom = 272.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+focus_mode = 0
+theme_override_font_sizes/font_size = 36
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 392.0
+offset_right = 667.0
+offset_bottom = 442.0
+theme_override_font_sizes/font_size = 36
+text = "New enemy"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 959.0
+offset_top = 254.0
+offset_right = 1114.0
+offset_bottom = 304.0
+theme_override_font_sizes/font_size = 36
+text = "2 Player
+"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 254.0
+offset_right = 314.0
+offset_bottom = 304.0
+theme_override_font_sizes/font_size = 36
+text = "1 Player
+"
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 477.0
+offset_right = 649.0
+offset_bottom = 527.0
+theme_override_font_sizes/font_size = 36
+text = "Stage 1 - 15
+"
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(174, 420)
+texture = ExtResource("5_yocga")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(1114, 423)
+texture = ExtResource("6_1iide")
+
+[node name="OptionButton_stage" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 707.0
+offset_top = 474.0
+offset_right = 773.0
+offset_bottom = 532.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 36
+item_count = 15
+selected = 0
+popup/item_0/text = "1"
+popup/item_0/id = 1
+popup/item_1/text = "2"
+popup/item_1/id = 2
+popup/item_2/text = "3"
+popup/item_2/id = 3
+popup/item_3/text = "4"
+popup/item_3/id = 4
+popup/item_4/text = "5"
+popup/item_4/id = 5
+popup/item_5/text = "6"
+popup/item_5/id = 6
+popup/item_6/text = "7"
+popup/item_6/id = 7
+popup/item_7/text = "8"
+popup/item_7/id = 8
+popup/item_8/text = "9"
+popup/item_8/id = 9
+popup/item_9/text = "10"
+popup/item_9/id = 10
+popup/item_10/text = "11"
+popup/item_10/id = 11
+popup/item_11/text = "12"
+popup/item_11/id = 12
+popup/item_12/text = "13"
+popup/item_12/id = 13
+popup/item_13/text = "14"
+popup/item_13/id = 14
+popup/item_14/text = "15"
+popup/item_14/id = 15
+
+[node name="Lazer" type="Sprite2D" parent="."]
+position = Vector2(274.68, 670)
+scale = Vector2(1.32, 1.32)
+texture = ExtResource("7_n0cud")
+
+[node name="OptionButton_lazer" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 310.68
+offset_top = 641.0
+offset_right = 397.68
+offset_bottom = 699.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 36
+item_count = 28
+selected = 0
+popup/item_0/text = "1"
+popup/item_0/id = 1
+popup/item_1/text = "2"
+popup/item_1/id = 2
+popup/item_2/text = "3"
+popup/item_2/id = 3
+popup/item_3/text = "4"
+popup/item_3/id = 4
+popup/item_4/text = "5"
+popup/item_4/id = 5
+popup/item_5/text = "6"
+popup/item_5/id = 6
+popup/item_6/text = "7"
+popup/item_6/id = 7
+popup/item_7/text = "8"
+popup/item_7/id = 8
+popup/item_8/text = "9"
+popup/item_8/id = 9
+popup/item_9/text = "10"
+popup/item_9/id = 10
+popup/item_10/text = "11"
+popup/item_10/id = 11
+popup/item_11/text = "12"
+popup/item_11/id = 12
+popup/item_12/text = "13"
+popup/item_12/id = 13
+popup/item_13/text = "14"
+popup/item_13/id = 14
+popup/item_14/text = "15"
+popup/item_14/id = 15
+popup/item_15/text = "16"
+popup/item_15/id = 16
+popup/item_16/text = "17"
+popup/item_16/id = 17
+popup/item_17/text = "18"
+popup/item_17/id = 18
+popup/item_18/text = "19"
+popup/item_18/id = 19
+popup/item_19/text = "20"
+popup/item_19/id = 20
+popup/item_20/text = "21"
+popup/item_20/id = 21
+popup/item_21/text = "22"
+popup/item_21/id = 22
+popup/item_22/text = "23"
+popup/item_22/id = 23
+popup/item_23/text = "24"
+popup/item_23/id = 24
+popup/item_24/text = "25"
+popup/item_24/id = 25
+popup/item_25/text = "26"
+popup/item_25/id = 26
+popup/item_26/text = "27"
+popup/item_26/id = 27
+popup/item_27/text = "28"
+popup/item_27/id = 28
+
+[node name="Bomb" type="Sprite2D" parent="."]
+position = Vector2(441.68, 670)
+scale = Vector2(1.32, 1.32)
+texture = ExtResource("8_digp8")
+
+[node name="OptionButton_bomb" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 477.68
+offset_top = 641.0
+offset_right = 564.68
+offset_bottom = 699.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 36
+item_count = 30
+selected = 0
+popup/item_0/text = "1"
+popup/item_0/id = 1
+popup/item_1/text = "2"
+popup/item_1/id = 2
+popup/item_2/text = "3"
+popup/item_2/id = 3
+popup/item_3/text = "4"
+popup/item_3/id = 4
+popup/item_4/text = "5"
+popup/item_4/id = 5
+popup/item_5/text = "6"
+popup/item_5/id = 6
+popup/item_6/text = "7"
+popup/item_6/id = 7
+popup/item_7/text = "8"
+popup/item_7/id = 8
+popup/item_8/text = "9"
+popup/item_8/id = 9
+popup/item_9/text = "10"
+popup/item_9/id = 10
+popup/item_10/text = "11"
+popup/item_10/id = 11
+popup/item_11/text = "12"
+popup/item_11/id = 12
+popup/item_12/text = "13"
+popup/item_12/id = 13
+popup/item_13/text = "14"
+popup/item_13/id = 14
+popup/item_14/text = "15"
+popup/item_14/id = 15
+popup/item_15/text = "16"
+popup/item_15/id = 16
+popup/item_16/text = "17"
+popup/item_16/id = 17
+popup/item_17/text = "18"
+popup/item_17/id = 18
+popup/item_18/text = "19"
+popup/item_18/id = 19
+popup/item_19/text = "20"
+popup/item_19/id = 20
+popup/item_20/text = "21"
+popup/item_20/id = 21
+popup/item_21/text = "22"
+popup/item_21/id = 22
+popup/item_22/text = "23"
+popup/item_22/id = 23
+popup/item_23/text = "24"
+popup/item_23/id = 24
+popup/item_24/text = "25"
+popup/item_24/id = 25
+popup/item_25/text = "26"
+popup/item_25/id = 26
+popup/item_26/text = "27"
+popup/item_26/id = 27
+popup/item_27/text = "28"
+popup/item_27/id = 28
+popup/item_28/text = "29"
+popup/item_28/id = 29
+popup/item_29/text = "30"
+popup/item_29/id = 30
+
+[node name="Speed" type="Sprite2D" parent="."]
+position = Vector2(605.68, 670)
+scale = Vector2(1.32, 1.32)
+texture = ExtResource("9_mgnlb")
+
+[node name="OptionButton_speed" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 641.68
+offset_top = 641.0
+offset_right = 728.68
+offset_bottom = 699.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 36
+item_count = 10
+selected = 0
+popup/item_0/text = "1"
+popup/item_0/id = 1
+popup/item_1/text = "2"
+popup/item_1/id = 2
+popup/item_2/text = "3"
+popup/item_2/id = 3
+popup/item_3/text = "4"
+popup/item_3/id = 4
+popup/item_4/text = "5"
+popup/item_4/id = 5
+popup/item_5/text = "6"
+popup/item_5/id = 6
+popup/item_6/text = "7"
+popup/item_6/id = 7
+popup/item_7/text = "8"
+popup/item_7/id = 8
+popup/item_8/text = "9"
+popup/item_8/id = 9
+popup/item_9/text = "10"
+popup/item_9/id = 10
+
+[node name="Item_skvoz_steni" type="Sprite2D" parent="."]
+position = Vector2(768.68, 670)
+scale = Vector2(1.32, 1.32)
+texture = ExtResource("10_13tl5")
+
+[node name="CheckBox4" type="CheckBox" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 810.68
+offset_top = 633.0
+offset_right = 834.68
+offset_bottom = 657.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+focus_mode = 0
+theme_override_font_sizes/font_size = 36
+
+[node name="Item_knopka" type="Sprite2D" parent="."]
+position = Vector2(930.68, 670)
+scale = Vector2(1.32, 1.32)
+texture = ExtResource("11_7smg5")
+
+[node name="CheckBox5" type="CheckBox" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 972.68
+offset_top = 633.0
+offset_right = 996.68
+offset_bottom = 657.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+focus_mode = 0
+theme_override_font_sizes/font_size = 36
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 561.0
+offset_right = 693.0
+offset_bottom = 611.0
+theme_override_font_sizes/font_size = 36
+text = "More enemy  x
+"
+
+[node name="OptionButton_enemy" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 707.0
+offset_top = 558.0
+offset_right = 794.0
+offset_bottom = 616.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 36
+item_count = 5
+selected = 0
+popup/item_0/text = "1"
+popup/item_0/id = 1
+popup/item_1/text = "1.5"
+popup/item_1/id = 2
+popup/item_2/text = "2"
+popup/item_2/id = 3
+popup/item_3/text = "2.5"
+popup/item_3/id = 4
+popup/item_4/text = "3"
+popup/item_4/id = 5
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="toggled" from="CheckBox2" to="." method="_on_check_box_2_toggled"]
+[connection signal="toggled" from="CheckBox3" to="." method="_on_check_box_3_toggled"]
+[connection signal="item_selected" from="OptionButton_stage" to="." method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="OptionButton_lazer" to="." method="_on_option_button_lazer_item_selected"]
+[connection signal="item_selected" from="OptionButton_bomb" to="." method="_on_option_button_bomb_item_selected"]
+[connection signal="item_selected" from="OptionButton_speed" to="." method="_on_option_button_speed_item_selected"]
+[connection signal="toggled" from="CheckBox4" to="." method="_on_check_box_4_toggled"]
+[connection signal="toggled" from="CheckBox5" to="." method="_on_check_box_5_toggled"]
+[connection signal="item_selected" from="OptionButton_enemy" to="." method="_on_option_button_enemy_item_selected"]
