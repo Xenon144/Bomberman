@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://bfq5nkxxgapr" path="res://Player/9-track-9.mp3" id="9_e2pdn"]
 [ext_resource type="AudioStream" uid="uid://dtglxqbajtdou" path="res://Player/SFX1_Gorizontal.mp3" id="10_oejc3"]
 [ext_resource type="AudioStream" uid="uid://beubu2cr8bfbj" path="res://Player/SFX2_Vertical.mp3" id="11_r8vjg"]
-[ext_resource type="AudioStream" uid="uid://yyx5mwlhfq1t" path="res://Player/Sound_b.mp3" id="12_k72tk"]
+[ext_resource type="AudioStream" uid="uid://diykjmy1642j2" path="res://Player/Sound_b.ogg" id="11_waryu"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5715o"]
 load_path = "res://.godot/imported/Player_2_down.png-2427811aa452fbf6322a3ede3cf0abf6.ctex"
@@ -213,6 +213,7 @@ stream = ExtResource("11_r8vjg")
 volume_db = -5.0
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("12_k72tk")
+stream = ExtResource("11_waryu")
+volume_db = -8.0
 
 [connection signal="finished" from="Sound_player_death2" to="." method="_on_sound_player_death_2_finished"]

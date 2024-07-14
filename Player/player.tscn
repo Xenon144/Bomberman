@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://dgufne6xa3kxl" path="res://Player/SFX 7.mp3" id="10_djr2g"]
 [ext_resource type="AudioStream" uid="uid://dtglxqbajtdou" path="res://Player/SFX1_Gorizontal.mp3" id="11_erlos"]
 [ext_resource type="AudioStream" uid="uid://beubu2cr8bfbj" path="res://Player/SFX2_Vertical.mp3" id="12_umq3b"]
-[ext_resource type="AudioStream" uid="uid://yyx5mwlhfq1t" path="res://Player/Sound_b.mp3" id="13_aqyop"]
+[ext_resource type="AudioStream" uid="uid://diykjmy1642j2" path="res://Player/Sound_b.ogg" id="13_jy6xd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3iord"]
 atlas = ExtResource("2_gv2f5")
@@ -224,8 +224,8 @@ stream = ExtResource("12_umq3b")
 volume_db = -5.0
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_aqyop")
-volume_db = -10.0
+stream = ExtResource("13_jy6xd")
+volume_db = -8.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="finished" from="Sound_player_death2" to="." method="_on_sound_player_death_2_finished"]
