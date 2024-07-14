@@ -1,4 +1,4 @@
-<h1> <b> Game Bomberman with additions and new enemies <b> <h1>
+<h1> <b> Bomberman with additions and new enemies <b> <h1>
 
 ![Menu](https://github.com/user-attachments/assets/33d09265-5962-496b-8107-03a905808680)
 ![1](https://github.com/user-attachments/assets/48b4ee2b-2cb2-4a38-b3fa-7a63e955c354)
