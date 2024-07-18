@@ -266,6 +266,7 @@ const speed: int = 50
 var napravlenie_dvigenia: Vector2 = Vector2.ZERO
 var izmenitj_napravlenie_glaz = 0
 
+
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 var glaza_right: String = "glaza_right"
 var glaza_left: String = "glaza_left"

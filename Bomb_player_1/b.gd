@@ -41,9 +41,13 @@ func _on_timer_timeout():
 
 func _process(delta):
 	if Global.vzal_item_knopka == true and Global.player_voshel_v_vorota == false:
-		if Input.is_key_pressed(KEY_Q):
-			Global.nagalKnopkuB = false
-			destroy()
+		if Input.is_action_pressed("ui_key_B_player_1"):
+			Global.nagalKnopkuB = true
+			if Global.nagalKnopkuB == true:
+				Global.massiav_s_b[0].destroy()
+				Global.massiav_s_b.pop_front()
+				Global.nagalKnopkuB = false
+		
 			
 func destroy():
 	var new_lazer_up = lazer_up.instantiate()
@@ -256,12 +260,14 @@ func destroy():
 		new_lazer_konec_down.global_position = Global.down_kraynaa_down_coordinate_dla_lazera
 		# #######################################################################
 	
+	
 	Global.sozdannih_b -= 1
 	queue_free()
 	Global.vkluchit_Zvuk_B = true
-	if Global.massiav_s_b.size() > 0:
-		Global.massiav_s_b.pop_front()
+	#if Global.massiav_s_b.size() > 0:
+	#	Global.massiav_s_b.pop_front()
 	Global.coordinate_kuda_ustanovlenna_poslednaa_b = null
 	# Из массива удаляются b в порядке их появления
 	if Global.massiv_kuda_ustanovlenna_poslednaa_b.size() > 0:
 		Global.massiv_kuda_ustanovlenna_poslednaa_b.pop_front()
+	

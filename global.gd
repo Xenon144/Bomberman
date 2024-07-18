@@ -1,10 +1,11 @@
 extends Node
 var more_enemy: float = 1 # Количество мобов умножается на это число
 var vtoroy_player: bool = false # true - второй игрок включен, false - выключен
+var item_flamepass: bool = false # true - бонус flamepass включен, false - выключен
 var mob_pulki: bool = false # Пульки у мобов. true - включены, false - выключены
 var novie_mobi: bool = false # true - новые мобы включены, false - выключены
 var stage_nomer: int = 1 # Номер стадии с которой начинается игра
-var chislo_gizney: int = 6 # Число жизней на всю игру
+var chislo_gizney: int = 11 # Число жизней на всю игру
 var speed: int = 170 # Скорость игрока
 var player_skvoz_steni: int = 76 # 76 - игрок не ходит сквозь кирпичные блоки. 72 игрок ходит сквозь сквозь кирпичные блоки
 var dlina_lazera: int = 48 # Длина лазера в пикселях

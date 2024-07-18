@@ -16,8 +16,11 @@ func _on_check_box_2_toggled(toggled_on):
 		Global.novie_mobi = false
 	
 func _on_check_box_3_toggled(toggled_on):
-	Global.vtoroy_player = true
-
+	if toggled_on:
+		Global.vtoroy_player = true
+	else:
+		Global.vtoroy_player = false
+		
 func _on_play_pressed():
 	get_tree().change_scene_to_file("res://Menu_nomer_stage/menu_nomer_stage.tscn")
 
@@ -61,3 +64,14 @@ func _on_option_button_enemy_item_selected(index):
 		Global.more_enemy = 2.5
 	elif index == 4:
 		Global.more_enemy = 3
+
+func _on_check_box_6_toggled(toggled_on):
+	if toggled_on:
+		Global.item_flamepass = true
+	else:
+		Global.item_flamepass = false
+		
+func _on_option_button_life_item_selected(index):
+	Global.chislo_gizney = index + 2
+	
+		

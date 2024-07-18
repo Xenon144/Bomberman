@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://svm3riuguqr3"]
+[gd_scene load_steps=14 format=3 uid="uid://svm3riuguqr3"]
 
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_fpbki"]
 [ext_resource type="Texture2D" uid="uid://kep81m00du6s" path="res://Menu/black_texture.png" id="2_0rqpj"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://b5v0n6rblxa6g" path="res://Items/Item_speed/item_speed.png" id="9_mgnlb"]
 [ext_resource type="Texture2D" uid="uid://ds0hytpk77xe" path="res://Items/Item_skvoz_steni/item_skvoz_steni.png" id="10_13tl5"]
 [ext_resource type="Texture2D" uid="uid://j4idmpou4n62" path="res://Items/Item_knopka/item_knopka.png" id="11_7smg5"]
+[ext_resource type="Texture2D" uid="uid://ovqfv6iy486p" path="res://Items/Item_flamepass/item_flamepass.png" id="12_3qd1j"]
+[ext_resource type="Texture2D" uid="uid://da6erbsin0cxc" path="res://Menu/Life.png" id="13_wcgxb"]
 
 [node name="menu" type="Control"]
 layout_mode = 3
@@ -193,16 +195,16 @@ popup/item_14/text = "15"
 popup/item_14/id = 15
 
 [node name="Lazer" type="Sprite2D" parent="."]
-position = Vector2(274.68, 670)
+position = Vector2(75.68, 671)
 scale = Vector2(1.32, 1.32)
 texture = ExtResource("7_n0cud")
 
 [node name="OptionButton_lazer" type="OptionButton" parent="."]
 layout_mode = 0
-offset_left = 310.68
-offset_top = 641.0
-offset_right = 397.68
-offset_bottom = 699.0
+offset_left = 111.68
+offset_top = 642.0
+offset_right = 198.68
+offset_bottom = 700.0
 focus_mode = 0
 theme_override_font_sizes/font_size = 36
 item_count = 28
@@ -265,16 +267,16 @@ popup/item_27/text = "28"
 popup/item_27/id = 28
 
 [node name="Bomb" type="Sprite2D" parent="."]
-position = Vector2(441.68, 670)
+position = Vector2(242.68, 671)
 scale = Vector2(1.32, 1.32)
 texture = ExtResource("8_digp8")
 
 [node name="OptionButton_bomb" type="OptionButton" parent="."]
 layout_mode = 0
-offset_left = 477.68
-offset_top = 641.0
-offset_right = 564.68
-offset_bottom = 699.0
+offset_left = 278.68
+offset_top = 642.0
+offset_right = 365.68
+offset_bottom = 700.0
 focus_mode = 0
 theme_override_font_sizes/font_size = 36
 item_count = 30
@@ -341,16 +343,16 @@ popup/item_29/text = "30"
 popup/item_29/id = 30
 
 [node name="Speed" type="Sprite2D" parent="."]
-position = Vector2(605.68, 670)
+position = Vector2(406.68, 671)
 scale = Vector2(1.32, 1.32)
 texture = ExtResource("9_mgnlb")
 
 [node name="OptionButton_speed" type="OptionButton" parent="."]
 layout_mode = 0
-offset_left = 641.68
-offset_top = 641.0
-offset_right = 728.68
-offset_bottom = 699.0
+offset_left = 442.68
+offset_top = 642.0
+offset_right = 529.68
+offset_bottom = 700.0
 focus_mode = 0
 theme_override_font_sizes/font_size = 36
 item_count = 10
@@ -377,7 +379,7 @@ popup/item_9/text = "10"
 popup/item_9/id = 10
 
 [node name="Item_skvoz_steni" type="Sprite2D" parent="."]
-position = Vector2(768.68, 670)
+position = Vector2(569.68, 671)
 scale = Vector2(1.32, 1.32)
 texture = ExtResource("10_13tl5")
 
@@ -386,10 +388,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 810.68
-offset_top = 633.0
-offset_right = 834.68
-offset_bottom = 657.0
+offset_left = 611.68
+offset_top = 634.0
+offset_right = 635.68
+offset_bottom = 658.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
@@ -397,7 +399,7 @@ focus_mode = 0
 theme_override_font_sizes/font_size = 36
 
 [node name="Item_knopka" type="Sprite2D" parent="."]
-position = Vector2(930.68, 670)
+position = Vector2(731.68, 671)
 scale = Vector2(1.32, 1.32)
 texture = ExtResource("11_7smg5")
 
@@ -406,10 +408,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 972.68
-offset_top = 633.0
-offset_right = 996.68
-offset_bottom = 657.0
+offset_left = 773.68
+offset_top = 634.0
+offset_right = 797.68
+offset_bottom = 658.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
@@ -447,6 +449,102 @@ popup/item_3/id = 4
 popup/item_4/text = "3"
 popup/item_4/id = 5
 
+[node name="Item_flamepass" type="Sprite2D" parent="."]
+position = Vector2(891, 671)
+scale = Vector2(1.32, 1.32)
+texture = ExtResource("12_3qd1j")
+
+[node name="CheckBox6" type="CheckBox" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 932.0
+offset_top = 634.0
+offset_right = 956.0
+offset_bottom = 658.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+focus_mode = 0
+theme_override_font_sizes/font_size = 36
+
+[node name="Life" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1016.0
+offset_top = 642.0
+offset_right = 1089.0
+offset_bottom = 692.0
+theme_override_font_sizes/font_size = 36
+text = "Life
+"
+
+[node name="Life_image" type="Sprite2D" parent="."]
+position = Vector2(1125, 672)
+scale = Vector2(1.32, 1.32)
+texture = ExtResource("13_wcgxb")
+
+[node name="OptionButton_life" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 1157.0
+offset_top = 639.0
+offset_right = 1254.0
+offset_bottom = 697.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 36
+item_count = 25
+selected = 4
+popup/item_0/text = "1"
+popup/item_0/id = 0
+popup/item_1/text = "2"
+popup/item_1/id = 1
+popup/item_2/text = "3"
+popup/item_2/id = 2
+popup/item_3/text = "4"
+popup/item_3/id = 3
+popup/item_4/text = "5"
+popup/item_4/id = 4
+popup/item_5/text = "6"
+popup/item_5/id = 5
+popup/item_6/text = "7"
+popup/item_6/id = 6
+popup/item_7/text = "8"
+popup/item_7/id = 7
+popup/item_8/text = "9"
+popup/item_8/id = 8
+popup/item_9/text = "10"
+popup/item_9/id = 9
+popup/item_10/text = "11"
+popup/item_10/id = 10
+popup/item_11/text = "12"
+popup/item_11/id = 11
+popup/item_12/text = "13"
+popup/item_12/id = 12
+popup/item_13/text = "14"
+popup/item_13/id = 13
+popup/item_14/text = "15"
+popup/item_14/id = 14
+popup/item_15/text = "16"
+popup/item_15/id = 15
+popup/item_16/text = "17"
+popup/item_16/id = 16
+popup/item_17/text = "18"
+popup/item_17/id = 17
+popup/item_18/text = "19"
+popup/item_18/id = 18
+popup/item_19/text = "20"
+popup/item_19/id = 19
+popup/item_20/text = "21"
+popup/item_20/id = 20
+popup/item_21/text = "22"
+popup/item_21/id = 21
+popup/item_22/text = "23"
+popup/item_22/id = 22
+popup/item_23/text = "24"
+popup/item_23/id = 23
+popup/item_24/text = "25"
+popup/item_24/id = 24
+
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
 [connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]
@@ -459,3 +557,5 @@ popup/item_4/id = 5
 [connection signal="toggled" from="CheckBox4" to="." method="_on_check_box_4_toggled"]
 [connection signal="toggled" from="CheckBox5" to="." method="_on_check_box_5_toggled"]
 [connection signal="item_selected" from="OptionButton_enemy" to="." method="_on_option_button_enemy_item_selected"]
+[connection signal="toggled" from="CheckBox6" to="." method="_on_check_box_6_toggled"]
+[connection signal="item_selected" from="OptionButton_life" to="." method="_on_option_button_life_item_selected"]

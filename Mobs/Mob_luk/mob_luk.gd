@@ -5,6 +5,7 @@ var pulka = preload("res://Pulka/pulka.tscn")
 const speed: int = 110
 var napravlenie_dvigenia: Vector2 = Vector2.ZERO
 var izmenitj_napravlenie_glaz = 0
+var mob_destroy: bool = false # Чтобы игрок не погибал, когда касается анимации уничтожающегося моба
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 var glaza_left: String = "glaza_left"
@@ -35,7 +36,7 @@ func _ready():
 		izmenitj_napravlenie_glaz = 2
 	
 	# Создание пулек, если они включены в глобальной переменной
-	if Global.mob_pulki == true:
+	if Global.mob_pulki == true and mob_destroy == false:
 		# Запускаем таймер на случайное время от 2 до 10 секунд
 		var random_time = randf_range(2, 10)
 		$Timer.wait_time = random_time
@@ -117,6 +118,7 @@ func smena_dvigenija_napravlenija():
 
 func destroy():
 	napravlenie_dvigenia = Vector2.ZERO
+	mob_destroy = true
 	anim.play(death_mob_luk)
 	anim.animation_finished.connect(_on_animated_sprite_2d_animation_finished)
 
@@ -132,5 +134,5 @@ func _on_timer_timeout():
 		new_pulka.global_position = global_position
 		
 func _on_area_2d_body_entered(player):
-	if player.has_method("destroy") and not player.has_been_destroyed:
+	if player.has_method("destroy") and not player.has_been_destroyed and mob_destroy == false:
 		player.destroy()

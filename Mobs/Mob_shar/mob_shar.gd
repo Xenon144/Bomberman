@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var pulka = preload("res://Pulka/pulka.tscn")
 
+var mob_destroy: bool = false # Чтобы игрок не погибал, когда касается анимации уничтожающегося моба
 const speed: int = 90
 var napravlenie_dvigenia: Vector2 = Vector2.ZERO
 var izmenitj_napravlenie_glaz = 0
@@ -117,6 +118,7 @@ func smena_dvigenija_napravlenija():
 
 func destroy():
 	napravlenie_dvigenia = Vector2.ZERO
+	mob_destroy = true
 	anim.play(death_mob_shar)
 	anim.animation_finished.connect(_on_animated_sprite_2d_animation_finished)
 
@@ -126,11 +128,11 @@ func _on_animated_sprite_2d_animation_finished():
 	
 # Когда таймер истекает, запускается пулька
 func _on_timer_timeout():
-	if Global.mob_pulki == true:
+	if Global.mob_pulki == true and mob_destroy == false:
 		var new_pulka = pulka.instantiate()
 		get_parent().add_child(new_pulka)
 		new_pulka.global_position = global_position
 		
 func _on_area_2d_body_entered(player):
-	if player.has_method("destroy") and not player.has_been_destroyed:
+	if player.has_method("destroy") and not player.has_been_destroyed and mob_destroy == false:
 		player.destroy()

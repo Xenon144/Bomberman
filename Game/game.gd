@@ -87,7 +87,7 @@ func _ready():
 	elif Global.stage_nomer == 8:
 		item = $item_b
 	elif Global.stage_nomer == 9:
-		item = $item_lazer
+		item = $item_flamepass
 	elif Global.stage_nomer == 10:
 		item = $item_lazer
 	else:
@@ -268,7 +268,7 @@ func mob_prividenie_spawn():
 		Global.massiv_vse_sozdannie_mobi.append(mob_prividenie_new)
 		
 func mob_block_spawn():
-	for i in range(6 * Global.more_enemy):
+	for i in range(3 * Global.more_enemy):
 		var mob_block_new = mob_block_preload.instantiate()
 		var random_index = randi_range(0, Global.svobodnie_coordinates.size() - 1)
 		mob_block_new.position = Global.svobodnie_coordinates[random_index]
@@ -276,7 +276,7 @@ func mob_block_spawn():
 		Global.massiv_vse_sozdannie_mobi.append(mob_block_new)
 		
 func mob_bomb_spawn():
-	for i in range(3 * Global.more_enemy):
+	for i in range(4 * Global.more_enemy):
 		var mob_b_new = mob_b_preload.instantiate()
 		var random_index = randi_range(0, Global.svobodnie_coordinates.size() - 1)
 		mob_b_new.position = Global.svobodnie_coordinates[random_index]

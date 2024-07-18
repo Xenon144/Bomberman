@@ -19,6 +19,7 @@ var massiv_kuda_ustanovlenna_poslednaa_b_MOB = []
 
 const speed = 100
 var napravlenie_dvigenia = Vector2.ZERO
+var mob_destroy: bool = false # Чтобы игрок не погибал, когда касается анимации уничтожающегося моба
 
 @onready var anim = $AnimatedSprite2D
 var anim_default = "anim_default"
@@ -39,7 +40,7 @@ func _ready():
 		napravlenie_dvigenia = Vector2.RIGHT
 		
 	# Создание пулек, если они включены в глобальной переменной
-	if Global.mob_pulki == true:
+	if Global.mob_pulki == true and mob_destroy == false:
 		# Запускаем таймер на случайное время от 2 до 10 секунд
 		var random_time = randf_range(2, 10)
 		$Timer.wait_time = random_time
@@ -98,6 +99,7 @@ func smena_dvigenija_napravlenija():
 					
 func destroy():
 	napravlenie_dvigenia = Vector2.ZERO
+	mob_destroy = true
 	queue_free()
 	Global.massiv_vse_sozdannie_mobi.erase(self) # Удаляю из глобального массива моба, который был уничтожен
 
@@ -109,7 +111,7 @@ func _on_timer_timeout():
 		new_pulka.global_position = global_position
 		
 func _on_area_2d_body_entered(player):
-	if player.has_method("destroy") and not player.has_been_destroyed:
+	if player.has_method("destroy") and not player.has_been_destroyed and mob_destroy == false:
 		player.destroy()
 		
 func _on_timer_2_timeout():

@@ -65,7 +65,7 @@ func _physics_process(delta):
 		else:
 			velocity = Vector2.ZERO
 			
-		if (Global.sozdannih_b_player_2 < Global.maximum_b_player_2) and Input.is_key_pressed(KEY_DOWN) and Global.player_death != true:
+		if (Global.sozdannih_b_player_2 < Global.maximum_b_player_2) and Input.is_action_pressed("ui_key_A_player_2") and Global.player_death != true:
 			bomb_player_2_create()
 			
 		move_and_slide()

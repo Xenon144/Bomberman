@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c74bgk5t3i073"]
+[gd_scene load_steps=26 format=3 uid="uid://c74bgk5t3i073"]
 
 [ext_resource type="Script" path="res://Game/game.gd" id="1_c1frk"]
 [ext_resource type="PackedScene" uid="uid://d1iu4qq6fy87d" path="res://Player/player.tscn" id="2_hrwcn"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dooh8axm0x88g" path="res://Items/Item_b/item_b.tscn" id="12_3ho0m"]
 [ext_resource type="PackedScene" uid="uid://cygglfppscm2l" path="res://Items/Item_speed/item_speed.tscn" id="13_03m6e"]
 [ext_resource type="PackedScene" uid="uid://xe11fmwijvcg" path="res://Items/Item_skvoz_steni/item_skvoz_steni.tscn" id="14_oke48"]
+[ext_resource type="PackedScene" uid="uid://k8v6h58r4bix" path="res://Items/Item_flamepass/item_flamepass.tscn" id="15_3bhd2"]
 [ext_resource type="PackedScene" uid="uid://oius0v23rhgm" path="res://Items/Item_knopka/item_knopka.tscn" id="15_kmpu5"]
 [ext_resource type="Texture2D" uid="uid://d1r3um1cnwstf" path="res://Game/ButtonMenu.png" id="22_gv2r4"]
 [ext_resource type="Texture2D" uid="uid://cmp7eut7b333h" path="res://Game/ButtonMenuPress.png" id="23_w431k"]
@@ -98,6 +99,9 @@ position = Vector2(216, -24)
 [node name="item_knopka" parent="." instance=ExtResource("15_kmpu5")]
 position = Vector2(265, -24)
 
+[node name="item_flamepass" parent="." instance=ExtResource("15_3bhd2")]
+position = Vector2(313, -24)
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 200.0
 one_shot = true
@@ -138,9 +142,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -165.0
+offset_left = -206.0
 offset_top = -191.0
-offset_right = 259.0
+offset_right = 218.0
 offset_bottom = 264.0
 grow_horizontal = 2
 grow_vertical = 2
